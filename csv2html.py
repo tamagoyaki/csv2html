@@ -27,9 +27,9 @@ for opt in sys.argv[1:]:
         chder = True
     else:
         usage = True
-        break;
+        break
 
-if True == usage:
+if usage is True:
     print "USAGE:\n"
     print "  {} [ -h | -H ]\n".format(sys.argv[0])
     print "  -h : Row Header"
@@ -51,10 +51,10 @@ for row in csv.reader(iter(sys.stdin.readline, '')):
 
     for col in row:
         print("<{0}>{1}</{0}>".format(tag, col))
-        if False == rhder:
+        if rhder is False:
             tag = "td"
-        
-    rhder= False
+
+    rhder = False
     tag = "td"
     print("</tr>")
 print("</table>")
